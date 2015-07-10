@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
+@property (nonatomic, retain) MKPointAnnotation *centerAnnotation;
+
 @end
 
 @implementation BTMapViewController
@@ -29,7 +31,13 @@
     }
     
     [self.mapView setShowsUserLocation:YES];
-    // Do any additional setup after loading the view.
+    
+    //Set center Annotation
+    self.centerAnnotation = [[MKPointAnnotation alloc] init];
+    self.centerAnnotation.coordinate = self.mapView.centerCoordinate;
+    self.centerAnnotation.title = @"Your location";
+    [self.mapView addAnnotation:self.centerAnnotation];
+    [self.mapView selectAnnotation:self.centerAnnotation animated:NO];
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
@@ -37,6 +45,24 @@
     [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
+    CLLocationCoordinate2D newCoord2D = [self.mapView centerCoordinate];
+    
+    self.centerAnnotation.coordinate = newCoord2D;
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:newCoord2D.latitude longitude:newCoord2D.longitude];
+    
+    //Get address from location (latitude, longtitude)
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        if (placemarks.count > 0) {
+            CLPlacemark *placemark = placemarks[0];
+            
+            self.centerAnnotation.title = placemark.addressDictionary[@"Name"];
+            [self.mapView selectAnnotation:self.centerAnnotation animated:NO];
+        }
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
