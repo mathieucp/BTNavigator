@@ -16,6 +16,7 @@
 		515DB7191B50094D00687187 /* BTMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB7181B50094D00687187 /* BTMapViewController.m */; };
 		515DB71C1B5009CB00687187 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515DB71B1B5009CB00687187 /* MapKit.framework */; };
 		515DB7201B500A3C00687187 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB71F1B500A3C00687187 /* Constants.m */; };
+		515DB72A1B503AFA00687187 /* BTAutoCompleteTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB7291B503AFA00687187 /* BTAutoCompleteTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		515DB71E1B500A3C00687187 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Support/Constants.h; sourceTree = SOURCE_ROOT; };
 		515DB71F1B500A3C00687187 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Support/Constants.m; sourceTree = SOURCE_ROOT; };
 		515DB7211B500B1100687187 /* BTNavigator-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNavigator-Prefix.pch"; sourceTree = "<group>"; };
+		515DB7281B503AFA00687187 /* BTAutoCompleteTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTAutoCompleteTableView.h; path = ViewController/BTAutoCompleteTableView.h; sourceTree = SOURCE_ROOT; };
+		515DB7291B503AFA00687187 /* BTAutoCompleteTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTAutoCompleteTableView.m; path = ViewController/BTAutoCompleteTableView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +136,8 @@
 			children = (
 				515DB7171B50094D00687187 /* BTMapViewController.h */,
 				515DB7181B50094D00687187 /* BTMapViewController.m */,
+				515DB7281B503AFA00687187 /* BTAutoCompleteTableView.h */,
+				515DB7291B503AFA00687187 /* BTAutoCompleteTableView.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -249,6 +254,7 @@
 				515DB6F71B5007F200687187 /* AppDelegate.m in Sources */,
 				515DB6F41B5007F200687187 /* main.m in Sources */,
 				515DB7191B50094D00687187 /* BTMapViewController.m in Sources */,
+				515DB72A1B503AFA00687187 /* BTAutoCompleteTableView.m in Sources */,
 				515DB7201B500A3C00687187 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

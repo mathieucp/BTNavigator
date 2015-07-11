@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Map View Controller-->
@@ -18,39 +17,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search location" translatesAutoresizingMaskIntoConstraints="NO" id="IB7-p2-kDH">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="9Dn-JL-gB1"/>
+                                </connections>
+                            </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="EbH-GD-TB3" userLabel="mapView">
-                                <rect key="frame" x="0.0" y="32" width="600" height="568"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="xoV-tv-SdJ"/>
                                 </connections>
                             </mapView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8s-sz-q9D" userLabel="locationTextField">
-                                <rect key="frame" x="16" y="60" width="568" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="5zb-6R-5Ak"/>
-                                </connections>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="U8s-sz-q9D" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="8Cd-MS-I62"/>
-                            <constraint firstItem="U8s-sz-q9D" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="Ahd-px-rFr"/>
+                            <constraint firstItem="IB7-p2-kDH" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="7Cl-Px-AYX"/>
+                            <constraint firstItem="EbH-GD-TB3" firstAttribute="top" secondItem="IB7-p2-kDH" secondAttribute="bottom" id="KQj-kw-jc0"/>
                             <constraint firstItem="EbH-GD-TB3" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="12" id="M3l-Li-7Mc"/>
                             <constraint firstItem="EbH-GD-TB3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="QEN-fx-WxI"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="EbH-GD-TB3" secondAttribute="bottom" id="SQD-n2-9jv"/>
                             <constraint firstAttribute="trailing" secondItem="EbH-GD-TB3" secondAttribute="trailing" id="adK-AF-bjL"/>
-                            <constraint firstItem="U8s-sz-q9D" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="lEn-Gx-UzA"/>
+                            <constraint firstAttribute="trailing" secondItem="IB7-p2-kDH" secondAttribute="trailing" id="gu9-ZO-MAI"/>
+                            <constraint firstItem="IB7-p2-kDH" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="pzI-BB-MEG"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="M3l-Li-7Mc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="locationTextField" destination="U8s-sz-q9D" id="oMJ-M7-cxm"/>
                         <outlet property="mapView" destination="EbH-GD-TB3" id="UaN-y7-awJ"/>
+                        <outlet property="searchBar" destination="IB7-p2-kDH" id="ykh-4g-buX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="344"/>
         </scene>
     </scenes>
 </document>
