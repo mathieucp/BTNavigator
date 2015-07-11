@@ -1,5 +1,6 @@
 # BTNavigator
 - SSS Project Navigator
+
 ### Features
 - [x] Detect user’s current location.
 - [x] Convert map’s current longitude and latitude into address.
