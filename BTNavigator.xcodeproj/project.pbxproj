@@ -17,6 +17,7 @@
 		515DB71C1B5009CB00687187 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 515DB71B1B5009CB00687187 /* MapKit.framework */; };
 		515DB7201B500A3C00687187 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB71F1B500A3C00687187 /* Constants.m */; };
 		515DB72A1B503AFA00687187 /* BTAutoCompleteTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB7291B503AFA00687187 /* BTAutoCompleteTableView.m */; };
+		515DB72E1B51212600687187 /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = 515DB72D1B51212600687187 /* Route.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		515DB7211B500B1100687187 /* BTNavigator-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BTNavigator-Prefix.pch"; sourceTree = "<group>"; };
 		515DB7281B503AFA00687187 /* BTAutoCompleteTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BTAutoCompleteTableView.h; path = ViewController/BTAutoCompleteTableView.h; sourceTree = SOURCE_ROOT; };
 		515DB7291B503AFA00687187 /* BTAutoCompleteTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BTAutoCompleteTableView.m; path = ViewController/BTAutoCompleteTableView.m; sourceTree = SOURCE_ROOT; };
+		515DB72C1B51212600687187 /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Route.h; path = Modal/Route.h; sourceTree = "<group>"; };
+		515DB72D1B51212600687187 /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Route.m; path = Modal/Route.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,7 @@
 		515DB6F01B5007F200687187 /* BTNavigator */ = {
 			isa = PBXGroup;
 			children = (
+				515DB72B1B51210000687187 /* Modal */,
 				515DB71D1B5009EE00687187 /* Support */,
 				515DB71A1B50095500687187 /* ViewController */,
 				515DB6F51B5007F200687187 /* AppDelegate.h */,
@@ -149,6 +153,15 @@
 				515DB71F1B500A3C00687187 /* Constants.m */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		515DB72B1B51210000687187 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				515DB72C1B51212600687187 /* Route.h */,
+				515DB72D1B51212600687187 /* Route.m */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +267,7 @@
 				515DB6F71B5007F200687187 /* AppDelegate.m in Sources */,
 				515DB6F41B5007F200687187 /* main.m in Sources */,
 				515DB7191B50094D00687187 /* BTMapViewController.m in Sources */,
+				515DB72E1B51212600687187 /* Route.m in Sources */,
 				515DB72A1B503AFA00687187 /* BTAutoCompleteTableView.m in Sources */,
 				515DB7201B500A3C00687187 /* Constants.m in Sources */,
 			);
@@ -381,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "BTNavigator/BTNavigator-Prefix.pch";
 				INFOPLIST_FILE = BTNavigator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -393,6 +408,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PREFIX_HEADER = "BTNavigator/BTNavigator-Prefix.pch";
 				INFOPLIST_FILE = BTNavigator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
